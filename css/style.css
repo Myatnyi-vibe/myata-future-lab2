@@ -22,6 +22,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 84px;
   overflow-x: hidden;
   overflow-x: clip;
 }
@@ -78,8 +79,12 @@ b { font-weight: 700; }
 .s-white { background: var(--white); color: var(--ink); position: relative; overflow: hidden; }
 .s-black, .s-white { padding: clamp(70px, 9vw, 120px) 0; }
 
-/* фигурный «край билета»: смыкающиеся полукруги (r = половина плитки) */
-.scallop { height: var(--scallop-h); position: relative; z-index: 2; }
+/* фигурный «край билета»: смыкающиеся полукруги (r = половина плитки);
+   центрирование плиток прячет обрезанный полукруг на краях */
+.scallop {
+  height: var(--scallop-h); position: relative; z-index: 2;
+  background-position: 50% 0;
+}
 .scallop--down {
   background-color: var(--white);
   background-image: radial-gradient(circle at 50% 0,
@@ -108,6 +113,8 @@ b { font-weight: 700; }
 .dash-sep--wide { width: 100%; margin-top: 0; }
 
 /* ---------- типографика ---------- */
+.hero-title, .sec-title, .finale-title, .addr { overflow-wrap: break-word; }
+
 .sec-title {
   font-size: clamp(30px, 5.4vw, 54px);
   font-weight: 800; letter-spacing: 0.02em;
@@ -265,7 +272,7 @@ b { font-weight: 700; }
   font-size: clamp(13px, 1.7vw, 16px); font-weight: 400;
   line-height: 2.1;
 }
-.cal-cell.dim { color: #4b4b4b; }
+.cal-cell.dim { color: #7a7a7a; }
 
 /* рисованный золотой круг вокруг даты события */
 .cal-cell.event { color: #fff; font-weight: 700; }
@@ -298,7 +305,7 @@ b { font-weight: 700; }
 }
 .cd-cell span {
   display: block; margin-top: 6px;
-  font-size: 11px; letter-spacing: 0.24em; color: var(--gray-d);
+  font-size: 11px; letter-spacing: 0.24em; color: var(--gray);
   text-transform: uppercase;
 }
 .cd-colon {
@@ -457,6 +464,7 @@ b { font-weight: 700; }
 .footer {
   padding: 26px 20px;
   display: flex; justify-content: center; align-items: center; gap: 16px;
+  flex-wrap: wrap; row-gap: 6px;
   font-size: 11px; font-weight: 500; letter-spacing: 0.24em;
   color: var(--gray-d);
   background: var(--black);
@@ -522,6 +530,7 @@ b { font-weight: 700; }
 }
 .f-input::placeholder { color: #b5b5b5; font-weight: 400; }
 .f-input:focus { border-bottom-color: var(--gold); }
+.f-input:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
 .field.invalid .f-input { border-bottom-color: #c0392b; }
 .f-err { display: none; margin-top: 8px; font-size: 12.5px; color: #c0392b; }
 .field.invalid .f-err { display: block; }
@@ -596,7 +605,14 @@ body.modal-open { overflow: hidden; }
   .venue-card { padding: 10px 10px 14px; }
 }
 
+@media (max-width: 440px) {
+  .f-sep { display: none; }
+}
+
 @media (max-width: 400px) {
   .topbar-date { display: none; }
   .brand { margin-inline: auto; }
+  .hero-title { font-size: 30px; }
+  .sec-title { font-size: 28px; }
+  .finale-title { font-size: 36px; }
 }

@@ -121,7 +121,7 @@
     if (e.key !== 'Tab') return;
     var focusables = modal.querySelectorAll('button, input, [tabindex]:not([tabindex="-1"])');
     var list = Array.prototype.filter.call(focusables, function (el) {
-      return el.offsetParent !== null;
+      return el.offsetParent !== null && !el.disabled && el.tabIndex >= 0;
     });
     if (!list.length) return;
     var first = list[0], last = list[list.length - 1];
