@@ -465,16 +465,16 @@ b { font-weight: 700; }
 .dress-grid img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 3 / 4; }
 
 /* ч/б фото оживают при наведении */
-.dress-grid img, .ms-track img, .venue-card img, .venue-small img, .stage-photo img {
+.dress-grid img, .ms-track img, .venue-card img, .venue-small img {
   filter: grayscale(45%);
   transition: filter 0.6s ease, transform 0.7s var(--ease);
 }
 .dress-grid figure:hover img, .ms-track figure:hover img,
-.venue-card:hover img, .venue-small:hover img, .stage-photo:hover img {
+.venue-card:hover img, .venue-small:hover img {
   filter: grayscale(0%);
   transform: scale(1.035);
 }
-.venue-card, .venue-small, .stage-photo { overflow: hidden; }
+.venue-card, .venue-small { overflow: hidden; }
 .venue-card { overflow: visible; }
 .venue-card img { display: block; }
 
@@ -513,10 +513,6 @@ b { font-weight: 700; }
 .stage-item {
   font-size: clamp(15px, 1.9vw, 18px); line-height: 1.6;
   margin-top: 8px;
-}
-
-.stage-photo {
-  max-width: 560px; margin: 0 auto clamp(36px, 5vw, 54px);
 }
 
 .prog-cta { margin-top: clamp(40px, 6vw, 60px); }
