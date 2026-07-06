@@ -10,6 +10,21 @@
 
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  /* ============ ПРОГРЕСС СКРОЛЛА ============ */
+  var scrollBar = document.getElementById('scrollBar');
+  if (scrollBar) {
+    var updateBar = function () {
+      var doc = document.documentElement;
+      var max = doc.scrollHeight - window.innerHeight;
+      var p = max > 0 ? (window.scrollY / max) * 100 : 0;
+      scrollBar.style.width = p.toFixed(2) + '%';
+    };
+    window.addEventListener('scroll', updateBar, { passive: true });
+    document.addEventListener('scroll', updateBar, { passive: true, capture: true });
+    window.addEventListener('resize', updateBar);
+    updateBar();
+  }
+
   /* ============ REVEAL ПРИ СКРОЛЛЕ ============ */
   var revealEls = document.querySelectorAll('.rv');
   if ('IntersectionObserver' in window && !reduceMotion) {
@@ -75,7 +90,15 @@
     cdD.textContent = pad(Math.floor(s / 86400));
     cdH.textContent = pad(Math.floor(s % 86400 / 3600));
     cdM.textContent = pad(Math.floor(s % 3600 / 60));
-    cdS.textContent = pad(s % 60);
+    var sec = pad(s % 60);
+    if (cdS.textContent !== sec) {
+      cdS.textContent = sec;
+      if (!reduceMotion) {
+        cdS.classList.remove('tick');
+        void cdS.offsetWidth; // перезапуск анимации
+        cdS.classList.add('tick');
+      }
+    }
   }
   if (cdD) { tickCountdown(); setInterval(tickCountdown, 1000); }
 

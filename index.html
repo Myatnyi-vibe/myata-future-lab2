@@ -18,6 +18,8 @@
 </head>
 <body>
 
+<div class="scroll-progress" aria-hidden="true"><i id="scrollBar"></i></div>
+
 <!-- ШАПКА -->
 <header class="topbar">
   <a class="brand" href="#top" aria-label="МЯТА — наверх">М&nbsp;Я&nbsp;Т&nbsp;А</a>
@@ -49,6 +51,12 @@
       <div class="ft-cell"><span class="ft-label">кому:</span> <b>Дорогому<br>партнеру</b></div>
       <div class="ft-sep" aria-hidden="true"></div>
       <div class="ft-cell"><span class="ft-label">от:</span> <b>Управляющей<br>компании</b></div>
+    </div>
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>МЯТА FUTURE LAB <i>✳</i> 27 АВГУСТА 2026 <i>✳</i> МОСКВА <i>✳</i> ПРОСТРАНСТВО CONNECT <i>✳</i> МЯТА FUTURE LAB <i>✳</i> 27 АВГУСТА 2026 <i>✳</i> МОСКВА <i>✳</i> ПРОСТРАНСТВО CONNECT <i>✳</i>&nbsp;</span>
+        <span>МЯТА FUTURE LAB <i>✳</i> 27 АВГУСТА 2026 <i>✳</i> МОСКВА <i>✳</i> ПРОСТРАНСТВО CONNECT <i>✳</i> МЯТА FUTURE LAB <i>✳</i> 27 АВГУСТА 2026 <i>✳</i> МОСКВА <i>✳</i> ПРОСТРАНСТВО CONNECT <i>✳</i>&nbsp;</span>
+      </div>
     </div>
   </section>
   <div class="scallop scallop--down" aria-hidden="true"></div>
@@ -138,7 +146,7 @@
     <div class="wrap wrap--narrow">
       <h2 class="sec-title dark rv"><span class="gold">//</span>ПРОГРАММА</h2>
 
-      <article class="stage rv">
+      <article class="stage rv" data-num="01">
         <p class="stage-num gold">[&nbsp;01&nbsp;]</p>
         <h3 class="stage-name"><span>МЯТА</span>WELCOME</h3>
         <p class="stage-item">Регистрация в новой реальности: сбор гостей, знакомство и&nbsp;нетворкинг</p>
@@ -148,7 +156,7 @@
         <img src="assets/program-hall.jpg" alt="Атриум площадки" width="1280" height="854" loading="lazy">
       </figure>
 
-      <article class="stage rv">
+      <article class="stage rv" data-num="02">
         <p class="stage-num gold">[&nbsp;02&nbsp;]</p>
         <h3 class="stage-name"><span>МЯТА</span>BUSINESS</h3>
         <p class="stage-item">Выступление Управляющей компании: итоги и&nbsp;планы работы</p>
@@ -157,7 +165,7 @@
 
       <div class="dash-sep" aria-hidden="true"></div>
 
-      <article class="stage rv">
+      <article class="stage rv" data-num="03">
         <p class="stage-num gold">[&nbsp;03&nbsp;]</p>
         <h3 class="stage-name"><span>МЯТА</span>AWARDS</h3>
         <p class="stage-item">Награждение лучших партнеров сети</p>
@@ -166,7 +174,7 @@
 
       <div class="dash-sep" aria-hidden="true"></div>
 
-      <article class="stage rv">
+      <article class="stage rv" data-num="04">
         <p class="stage-num gold">[&nbsp;04&nbsp;]</p>
         <h3 class="stage-name"><span>МЯТА</span>PARTY</h3>
         <p class="stage-item">Грандиозная вечерняя программа</p>
@@ -188,11 +196,17 @@
       <p class="mem-year gold rv" data-d="1">[&nbsp;&nbsp;2025&nbsp;&nbsp;]</p>
       <p class="body-l rv" data-d="2">Вспомним нашу встречу,<br>чтобы настроиться<br>на нужное настроение!</p>
     </div>
-    <div class="mem-grid wrap">
-      <figure class="rv"><img src="assets/mem-1.jpg" alt="Слёт 2025: награждение на сцене" width="1280" height="854" loading="lazy"></figure>
-      <figure class="rv" data-d="1"><img src="assets/mem-2.jpg" alt="Слёт 2025: шоу на главной сцене" width="1280" height="854" loading="lazy"></figure>
-      <figure class="rv" data-d="2"><img src="assets/mem-3.jpg" alt="Слёт 2025: вечеринка и свет" width="1280" height="854" loading="lazy"></figure>
-      <figure class="rv" data-d="3"><img src="assets/mem-4.jpg" alt="Слёт 2025: гости за столами" width="1280" height="854" loading="lazy"></figure>
+    <div class="mem-strip rv" aria-label="Фотографии со слёта 2025 года">
+      <div class="ms-track">
+        <figure><img src="assets/mem-1.jpg" alt="Слёт 2025: награждение на сцене" width="1280" height="854" loading="lazy"></figure>
+        <figure><img src="assets/mem-2.jpg" alt="Слёт 2025: шоу на главной сцене" width="1280" height="854" loading="lazy"></figure>
+        <figure><img src="assets/mem-3.jpg" alt="Слёт 2025: вечеринка и свет" width="1280" height="854" loading="lazy"></figure>
+        <figure><img src="assets/mem-4.jpg" alt="Слёт 2025: гости за столами" width="1280" height="854" loading="lazy"></figure>
+        <figure aria-hidden="true"><img src="assets/mem-1.jpg" alt="" loading="lazy"></figure>
+        <figure aria-hidden="true"><img src="assets/mem-2.jpg" alt="" loading="lazy"></figure>
+        <figure aria-hidden="true"><img src="assets/mem-3.jpg" alt="" loading="lazy"></figure>
+        <figure aria-hidden="true"><img src="assets/mem-4.jpg" alt="" loading="lazy"></figure>
+      </div>
     </div>
   </section>
   <div class="scallop scallop--up" aria-hidden="true"></div>
