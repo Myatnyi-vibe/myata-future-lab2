@@ -173,7 +173,8 @@ b { font-weight: 700; }
 @media (prefers-reduced-motion: reduce) {
   .rv { opacity: 1; transform: none; filter: none; transition: none !important; }
   html { scroll-behavior: auto; }
-  .glow-breath, .cd-colon, .hero-logos img, .ai-shimmer { animation: none !important; }
+  .glow-breath, .cd-colon, .hero-logos img, .ai-shimmer,
+  .ornament--btm { animation: none !important; }
   .ticker-track { animation: none !important; }
   .ticker { overflow-x: auto; }
   .ms-track { animation: none !important; }
@@ -427,7 +428,15 @@ b { font-weight: 700; }
   pointer-events: none;
 }
 .ornament--top { top: -60px; transform: translateX(-50%); }
-.ornament--btm { bottom: -80px; transform: translateX(-50%); }
+.ornament--btm {
+  bottom: -60px; transform: translateX(-50%);
+  animation: orn-breathe 9s ease-in-out infinite;
+}
+/* лёгкое «дыхание» вензеля в финале */
+@keyframes orn-breathe {
+  0%, 100% { transform: translateX(-50%) scale(1) rotate(0deg); opacity: 0.7; }
+  50%      { transform: translateX(-50%) scale(1.05) rotate(1.2deg); opacity: 1; }
+}
 .dress .wrap--narrow, .finale .wrap { position: relative; z-index: 1; }
 
 .dress .body-l { margin-bottom: clamp(22px, 3vw, 32px); }
